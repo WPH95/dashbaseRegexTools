@@ -1,0 +1,67 @@
+{
+  "patterns": [
+    {
+      "regex": "^(?<ip>\\S+) (?<remoteIdentity>-|[a-zA-Z0-9@._\"]+) (?<identity>-|[a-zA-Z0-9@._\"]+) \\[(?<timeStr>[^\\]]+)\\] \"(?:(?:(?<method>\\S+) (?<uri>.+) HTTP\\\/(?<httpVersion>1\\.[01]))|-)\" (?<status>\\d+) (?<bytesSent>\\d+|\"?-\"?) \"(?<referer>.*)\" \"(?<userAgent>.*)\" (?<pid>\\d+) (?<domain>(\\S+)(,\\s*\\S+)*) (?<processTime>\\d+)( \"(?<cookie>.*)\")? (?<cfRay>.*)?$",
+      "timeFormat": "dd/MMM/yyyy:HH:mm:ss Z",
+      "schema": [
+        {
+          "name": "ip",
+          "type": "meta"
+        },
+        {
+          "type": "-"
+        },
+        {
+          "type": "-"
+        },
+        {
+          "type": "time"
+        },
+        {
+          "name": "method",
+          "type": "text"
+        },
+        {
+          "name": "uri",
+          "type": "meta"
+        },
+        {
+          "name": "http_version",
+          "type": "text"
+        },
+        {
+          "name": "status",
+          "type": "text"
+        },
+        {
+          "name": "bytes_sent",
+          "type": "text"
+        },
+        {
+          "name": "referer",
+          "type": "text"
+        },
+        {
+          "name": "user_agent",
+          "type": "text"
+        },
+        {
+          "name": "pid",
+          "type": "text"
+        },
+        {
+          "name": "domain",
+          "type": "text"
+        },
+        {
+          "name": "process_time",
+          "type": "text"
+        },
+        {
+          "name": "cf_ray",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
